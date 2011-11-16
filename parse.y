@@ -26,7 +26,7 @@ typedef struct prop prop;
 static Ini ini;
 static char *section = NULL;
 
-Ini IniRead(const char *filename) {
+FEOS_EXPORT Ini IniRead(const char *filename) {
   yyin = fopen(filename, "r");
   if(yyin)
     return NULL;
