@@ -3,13 +3,15 @@ FeOSIni v0.1 Beta
 
 Introduction
 ------------
-FeOSIni is a free, open-source ini parser for the FeOS operating system. It supports reading and writing ini files.
+FeOSIni is a free, open-source ini parser for the
+[FeOS](https://github.com/fincs/FeOS "FeOS") operating system.
+It supports reading and writing ini files.
 
 Build Prerequisites
 -------------------
 You need the following in order to build FeOSIni:
 
-- FeOS and FeOS SDK
+- [FeOS and FeOS SDK](https://github.com/fincs/FeOS "FeOS")
 - A working C compiler
 - bison
 - flex
