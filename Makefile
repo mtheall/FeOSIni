@@ -15,6 +15,5 @@ clean:
 
 ifneq ($(strip $(DEST)),)
 install: all
-	@cp ini.fx2   $(DEST)/data/FeOS/bin/ini.fx2   || exit 1
-	@cp ini.imp.a $(DEST)/data/FeOS/lib/ini.imp.a || exit 1
+	@cp ini.fx2 $(DEST)/data/FeOS/lib/ini.fx2 || exit 1
 endif
