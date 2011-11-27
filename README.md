@@ -18,9 +18,9 @@ You need the following in order to build FeOSIni:
 
 How to Build FeOSIni
 --------------------
-    cd /path/to/FeOS/apps
+    cd $(FEOSSDK)/userlib
     git clone git://github.com/mtheall/FeOSIni.git
-    cd into /path/to/FeOS
+    cd /path/to/FeOS
     make install
 
 How to Use FeOSIni
@@ -31,7 +31,7 @@ In your C/C++ source:
 
 In your Makefile:
 
-    CONF_LIBDIRS = /path/to/FeOS/apps/FeOSIni
+    CONF_LIBDIRS = $(FEOSSDK)/userlib/FeOSIni
     CONF_LIBS = -lini
 
 API
