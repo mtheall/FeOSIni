@@ -21,7 +21,7 @@ How to Build FeOSIni
     cd $(FEOSSDK)/userlib
     git clone git://github.com/mtheall/FeOSIni.git
     cd /path/to/FeOS
-    make install
+    make libinstall
 
 How to Use FeOSIni
 ------------------
