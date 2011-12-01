@@ -13,7 +13,5 @@ clean:
 	@rm -f source/parse.c include/parse.h source/lex.c
 	@make -f Makefile.FeOS clean
 
-ifneq ($(strip $(DEST)),)
 install: all
-	@cp ini.fx2 $(DEST)/data/FeOS/lib/ini.fx2 || exit 1
-endif
+	@cp ini.fx2 $(FEOSDEST)/data/FeOS/lib/ini.fx2 || exit 1
