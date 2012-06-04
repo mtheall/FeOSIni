@@ -4,6 +4,12 @@
 #include <string.h>
 #include "ini.h"
 
+#ifdef DEBUG
+#define debug(x...) fprintf(stderr, x)
+#else
+#define debug(x...) ((void)0)
+#endif
+
 extern FILE *yyin;
 int yylex(void);
 int yyparse (void);
@@ -70,7 +76,7 @@ SECTION:
     prop *p = $4;
     prop *q;
     while(p != NULL) {
-      printf("Inserting [%s] %s = %s\n", section, p->name, p->value);
+      debug("Inserting [%s] %s = %s\n", section, p->name, p->value);
       IniSetValue(ini, section, p->name, p->value);
       free(p->name);
       free(p->value);

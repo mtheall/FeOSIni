@@ -3,6 +3,12 @@
 #include <string.h>
 #include "ini.h"
 
+#ifdef DEBUG
+#define debug(x...) fprintf(stderr, x)
+#else
+#define debug(x...) ((void)0)
+#endif
+
 struct IniProperty {
   char               *name;
   char               *value;
@@ -19,7 +25,7 @@ typedef struct IniProperty IniProperty;
 typedef struct IniSection  IniSection;
 
 static inline IniProperty* __IniAllocProperty(const char *name, const char *value) {
-  printf("Create property %s = %s\n", name, value);
+  debug("Create property %s = %s\n", name, value);
   IniProperty *p = malloc(sizeof(IniProperty));
   memset(p, 0, sizeof(IniProperty));
   if(p) {
@@ -61,7 +67,7 @@ static inline IniProperty* __IniGetProperty(IniSection *s, const char *property)
 }
 
 static inline IniSection* __IniAllocSection(const char *name, const char *property, const char *value) {
-  printf("Creating section [%s] %s = %s\n", name, property, value);
+  debug("Creating section [%s] %s = %s\n", name, property, value);
   IniSection *s = malloc(sizeof(IniSection));
   memset(s, 0, sizeof(IniSection));
   if(s) {
@@ -158,7 +164,7 @@ FEOS_EXPORT int IniSetValue(Ini ini, const char *section, const char *property, 
 
   /* special case: initialized but no entries */
   if(s->name == NULL) {
-    printf("Create section [%s]\n", section);
+    debug("Create section [%s]\n", section);
     s->name = strdup(section);
     if(s->name == NULL)
       return -1;
@@ -184,7 +190,7 @@ FEOS_EXPORT int IniSetValue(Ini ini, const char *section, const char *property, 
     return 0;
   }
   else
-    printf("Found section [%s]\n", section);
+    debug("Found section [%s]\n", section);
 
   /* find property */
   p = __IniGetProperty(s, property);
@@ -198,7 +204,7 @@ FEOS_EXPORT int IniSetValue(Ini ini, const char *section, const char *property, 
     return 0;
   }
   else
-    printf("Found property [%s] %s\n", section, property);
+    debug("Found property [%s] %s\n", section, property);
 
   /* update value */
   tmp = p->value;
