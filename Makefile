@@ -10,7 +10,6 @@ source/parse.c include/parse.h: parse.y
 	@bison -l -o source/parse.c --defines=include/parse.h $<
 
 clean:
-	@rm -f source/parse.c include/parse.h source/lex.c
 	@make -f Makefile.FeOS clean
 
 install: all

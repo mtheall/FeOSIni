@@ -1,4 +1,4 @@
-FeOSIni v0.1 Beta
+FeOSIni v0.2 Beta
 =================
 
 Introduction
@@ -13,6 +13,9 @@ You need the following in order to build FeOSIni:
 
 - [FeOS and FeOS SDK](https://github.com/fincs/FeOS "FeOS")
 - A working C compiler
+
+Optional
+--------
 - bison
 - flex
 

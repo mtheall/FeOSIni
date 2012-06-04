@@ -1,9 +1,6 @@
 build/
-include/parse.h
 ini.elf
 ini.fx2
 ini.imp.a
 lib/
-source/lex.c
-source/parse.c
 
