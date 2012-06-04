@@ -1,5 +1,6 @@
 build/
 ini.elf
+ini.elf.dbg
 ini.fx2
 ini.imp.a
 lib/
