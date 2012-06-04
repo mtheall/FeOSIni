@@ -28,7 +28,7 @@ static char *section = NULL;
 
 FEOS_EXPORT Ini IniRead(const char *filename) {
   yyin = fopen(filename, "r");
-  if(yyin)
+  if(yyin == NULL)
     return NULL;
 
   ini = IniAlloc();
